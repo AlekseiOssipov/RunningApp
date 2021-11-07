@@ -17,7 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RunningApp">
         <activity
-            android:name=".ui.MainActivity" android:launchMode="singleTask">
+            android:name=".ui.MainActivity" android:launchMode="singleTask"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -2,6 +2,7 @@ package com.example.runningapp.db
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import dagger.Provides
 
 @Dao
 interface RunDAO {
@@ -11,6 +12,9 @@ interface RunDAO {
 
     @Delete
     suspend fun deleteRun(run: Run)
+
+    @Query("DELETE FROM running_table")
+    suspend fun deleteAll()
 
     @Query("SELECT * FROM running_table ORDER BY timestamp")
     fun getAllRunsSortedByDate(): LiveData<List<Run>>
@@ -38,6 +42,7 @@ interface RunDAO {
 
     @Query("SELECT AVG(avgSpeedInKMH) FROM running_table")
     fun getTotalAVGSpeedInKMH(): LiveData<Float>
+
 
 
 }
