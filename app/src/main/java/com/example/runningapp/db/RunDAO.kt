@@ -2,7 +2,6 @@ package com.example.runningapp.db
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import dagger.Provides
 
 @Dao
 interface RunDAO {
@@ -42,7 +41,4 @@ interface RunDAO {
 
     @Query("SELECT AVG(avgSpeedInKMH) FROM running_table")
     fun getTotalAVGSpeedInKMH(): LiveData<Float>
-
-
-
 }
